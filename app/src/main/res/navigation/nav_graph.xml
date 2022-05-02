@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/personFragment">
+    <fragment
+        android:id="@+id/personFragment"
+        android:name="com.example.sqlite.screens.person.PersonFragment"
+        android:label="fragment_person"
+        tools:layout="@layout/fragment_person" >
+        <action
+            android:id="@+id/action_personFragment_to_addPersonFragment"
+            app:destination="@id/addPersonFragment" />
+        <action
+            android:id="@+id/action_personFragment_to_editPersonFragment"
+            app:destination="@id/editPersonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPersonFragment"
+        android:name="com.example.sqlite.screens.add_person.AddPersonFragment"
+        android:label="fragment_add_person"
+        tools:layout="@layout/fragment_add_person" >
+        <action
+            android:id="@+id/action_addPersonFragment_to_personFragment"
+            app:destination="@id/personFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editPersonFragment"
+        android:name="com.example.sqlite.screens.edit_person.EditPersonFragment"
+        android:label="fragment_edit_person"
+        tools:layout="@layout/fragment_edit_person" >
+        <action
+            android:id="@+id/action_editPersonFragment_to_personFragment"
+            app:destination="@id/personFragment" />
+        <argument
+            android:name="Person"
+            app:argType="com.example.sqlite.Person"/>
+    </fragment>
+</navigation>
